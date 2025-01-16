@@ -1,9 +1,9 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.Xml.Linq;
+using Microsoft.AspNetCore.Http;
 
-
-	public class BuyerRegistrationViewModel
+public class BuyerRegistrationViewModel
 	{
         [Required]
         [Display(Name = "First Name")]
@@ -31,10 +31,6 @@ using System.Xml.Linq;
         [Required]
         [Display(Name = "Postal Code")]
         public string PostalCode { get; set; }
-
-        [Required]
-        [Display(Name = "Preferred Auction Category")]
-        public string PreferredAuctionCategory { get; set; }
 
         [Required]
         [DataType(DataType.Password)]

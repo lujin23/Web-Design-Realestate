@@ -2,49 +2,5 @@
     ViewData["Title"] = "Dashboard";
 }
 
-<h2>Welcome to KOI REAL Dashboard</h2>
-<p>Welcome, buyers! Explore our curated list of real estate properties and find your dream home. Click on a property to place your bid.</p>
-
-<div>
-    <h3>Available Properties</h3>
-    <ul id="property-list">
-        @* Example property list (to be dynamically populated) *@
-        @foreach (var property in ViewBag.Properties)
-        {
-            <li>
-                <a href="#" class="property-link" data-id="@property.Id" data-average-price="@property.AveragePrice">
-                    @property.Name
-                </a>
-            </li>
-        }
-    </ul>
-</div>
-
-<div id="property-bid-section" style="display:none;">
-    <h4 id="property-name"></h4>
-    <p>Average Price: <span id="average-price"></span></p>
-    <form method="post" action="/apply">
-        <label for="bid-price">Your Bid Price:</label>
-        <input type="number" id="bid-price" name="bid-price" required />
-        <input type="hidden" id="property-id" name="property-id" />
-        <button type="submit">Submit Bid</button>
-    </form>
-</div>
-
-<script>// JavaScript for handling property clicks and showing bid section
-    document.querySelectorAll('.property-link').forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault();
-            const propertyId = this.dataset.id;
-            const averagePrice = this.dataset.averagePrice;
-            const propertyName = this.textContent;
-
-            // Populate bid section
-            document.getElementById('property-name').textContent = propertyName;
-            document.getElementById('average-price').textContent = averagePrice;
-            document.getElementById('property-id').value = propertyId;
-
-            // Show bid section
-            document.getElementById('property-bid-section').style.display = 'block';
-        });
-    });</script>
+<h2>Welcome to the Dashboard</h2>
+<p>@ViewBag.Message</p>

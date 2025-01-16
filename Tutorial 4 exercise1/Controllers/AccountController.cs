@@ -29,7 +29,7 @@ namespace Tutorial_4_exercise1.Controllers
             if (ModelState.IsValid)
             {
                 // Save buyer data (mock or database)
-                return RedirectToAction("Login");
+                return RedirectToAction("Login","Account");
             }
 
             // Return form with validation errors
@@ -41,7 +41,7 @@ namespace Tutorial_4_exercise1.Controllers
             if (ModelState.IsValid)
             {
                 // Save buyer data (mock or database)
-                return RedirectToAction("Login");
+                return RedirectToAction("Login","Account");
             }
 
             // Return form with validation errors
